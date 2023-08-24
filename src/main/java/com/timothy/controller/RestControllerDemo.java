@@ -73,4 +73,9 @@ public class RestControllerDemo {
         }
         productRepo.deleteById(id);
     }
+
+    @GetMapping("/api/get/CheckExistence/{id}")
+    public Boolean checkIfProductExist(@PathVariable Integer id) {
+        return productRepo.existsById(id);
+    }
 }
